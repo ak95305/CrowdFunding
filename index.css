@@ -18,7 +18,7 @@
 #black-big-screen {
   display: none;
   position: absolute;
-  min-width: 100%;
+  width: 100vh;
   background-color: #000;
   opacity: 0.6;
 }
@@ -514,6 +514,11 @@ button:hover {
   #funding-menu {
     width: 80%;
     left: 10%;
+  }
+  #thankyou-box {
+    width: 80%;
+    left: 10%;
+    top: 5%;
   }
 }
 /*# sourceMappingURL=index.css.map */
