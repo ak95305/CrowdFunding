@@ -14,12 +14,16 @@ let blackBigScreen = document.querySelector("#black-big-screen");
 let thankBox = document.querySelector("#thankyou-box");
 let continueButton = document.querySelectorAll(".pledge-continue button");
 let gotItButton = document.querySelector("#thankyou-box button");
+let hamBurger = document.querySelector("#hamburger-logo");
+let navBar = document.querySelector("#nav-bar ul");
+
 
 //Event Handlers
 bookmarkBtn.addEventListener("click", bookmarkFunction);
 crossBtn.addEventListener("click", crossFunction);
 backBtn.addEventListener("click", menuFunction);
 gotItButton.addEventListener("click", gotItFunction);
+hamBurger.addEventListener("click", hamBurgerFunction);
 
 
 //Function
@@ -86,4 +90,26 @@ function continueFunction(){
 function gotItFunction(){
     blackBigScreen.style.display = "none";
     thankBox.style.display = "none";
+}
+
+function hamCrossFunction(){
+    blackBigScreen.setAttribute("style", "display: none !important;");
+    navBar.style.display = "none";
+    let image = document.createElement("IMG");
+    image.setAttribute("src", "./images/icon-hamburger.svg");
+    hamBurger.appendChild(image);
+    hamBurger.innerHTML = "";
+}
+
+function hamBurgerFunction(){
+    navBar.setAttribute("style", "display: grid !important;");
+    blackBigScreen.style.display = "inline";
+    blackBigScreen.style.backgroundColor = "#000";
+    blackBigScreen.style.height = "100vw";
+    hamBurger.innerHTML = "<i class='fa fa-times ham-cross'></i>";
+
+    
+    let hamCross = document.querySelector(".ham-cross");
+    hamBurger.addEventListener("click", hamCrossFunction);
+
 }
